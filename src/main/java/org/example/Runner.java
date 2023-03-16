@@ -1,6 +1,10 @@
 package org.example;
 
+import java.util.ArrayList;
+
 public class Runner {
+
+	public final ArrayList<Word> words = new ArrayList<>();
 
 	public void run(int from, int to) {
 		for (int i = from; i <= to; i++) {
@@ -9,12 +13,12 @@ public class Runner {
 	}
 
 	protected String compute(Integer n) {
-		String out = "";
-		if (n % 3 == 0) out += "Fizz";
-		if (n % 5 == 0) out += "Buzz";
-		if (n % 7 == 0) out += "Bazz";
-		if (out.isEmpty()) out = n.toString();
-		return out;
+		final StringBuilder out = new StringBuilder();
+		for (Word word : words) {
+			if (word.isAMultipleOf(n)) out.append(word.word);
+		}
+		if (out.length() == 0) out.append(n.toString());
+		return out.toString();
 	}
 
 }
