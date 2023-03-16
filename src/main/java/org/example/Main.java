@@ -2,6 +2,12 @@ package org.example;
 
 public class Main {
 	public static void main(String[] args) {
-		System.out.println("Hello world!");
+		run();
+	}
+
+	public static void run() {
+		for (Integer i = 1; i <= 100; i++) {
+			System.out.println(i);
+		}
 	}
 }
