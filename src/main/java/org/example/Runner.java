@@ -12,6 +12,7 @@ public class Runner {
 		String out = "";
 		if (n % 3 == 0) out += "Fizz";
 		if (n % 5 == 0) out += "Buzz";
+		if (n % 7 == 0) out += "Bazz";
 		if (out.isEmpty()) out = n.toString();
 		return out;
 	}
