@@ -8,13 +8,12 @@ public class Runner {
 		}
 	}
 
-
 	protected String compute(Integer n) {
-		if (n % 3 == 0 && n % 5 != 0) return "Fizz";
-		if (n % 3 != 0 && n % 5 == 0) return "Buzz";
-		// noinspection ConstantValue -- I don't know what IntelliJ has smoked here, but I want one.
-		if (n % 3 == 0 && n % 5 == 0) return "FizzBuzz";
-		return n.toString();
+		String out = "";
+		if (n % 3 == 0) out += "Fizz";
+		if (n % 5 == 0) out += "Buzz";
+		if (out.isEmpty()) out = n.toString();
+		return out;
 	}
 
 }
